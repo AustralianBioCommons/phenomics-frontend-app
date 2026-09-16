@@ -1,18 +1,14 @@
 [
   {
-    "tabTitle": "Subjects",
+    "tabTitle": "Model",
     "charts": {
-      "experimental_group": {
+      "disease_name": {
         "chartType": "fullPie",
-        "title": "Experimental Group",
-        "label": {
-          "show": true
-        },
-        "showLegendInChart": false
+        "title": "Disease"
       },
-      "ethnicity": {
-        "chartType": "horizontalStacked",
-        "title": "Ethnicity"
+      "gene_symbol": {
+        "chartType": "bar",
+        "title": "Gene"
       }
     },
     "filters": {
@@ -22,19 +18,17 @@
           "fields": ["project_id"]
         },
         {
-          "title": "Subjects",
+          "title": "Model",
           "fields": [
-            "gender",
-            "race",
-            "ethnicity",
-            "age_at_enrollment",
-            "experimental_group"
-          ],
-          "fieldsConfig": {
-            "gender": {
-              "label": "Sex"
-            }
-          }
+            "identifier",
+            "name",
+            "disease_name",
+            "phenotype",
+            "maintainer",
+            "producer",
+            "gene_symbol",
+            "taxonomy"
+          ]
         }
       ]
     },
@@ -46,10 +40,12 @@
       "fields": [
         "project_id",
         "submitter_id",
-        "race",
-        "ethnicity",
-        "age_at_enrollment",
-        "experimental_group"
+        "identifier",
+        "name",
+        "disease_name",
+        "phenotype",
+        "maintainer",
+        "producer"
       ],
       "columns": {
         "submitter_id": {
@@ -71,7 +67,7 @@
             "rightIcon": "download",
             "action": "data-json",
             "actionArgs": {
-              "filename": "gen3_datacommon_subjects.json"
+              "filename": "phenomics_models.json"
             }
           },
           {
@@ -82,64 +78,91 @@
             "rightIcon": "download",
             "action": "data-csv",
             "actionArgs": {
-              "filename": "gen3_datacommon_data_table.csv"
+              "filename": "phenomics_models.csv"
             }
           }
         ]
       }
     },
-    "buttons": [
-      {
-        "enabled": true,
-        "type": "manifest",
-        "action": "manifest",
-        "title": "Download File Manifest for Subjects",
-        "leftIcon": "datafile",
-        "rightIcon": "download",
-        "fileName": "subject_files_manifest.json",
-        "actionArgs": {
-          "resourceIndexType": "file",
-          "resourceIdField": "_subject_id",
-          "referenceIdFieldInResourceIndex": "_subject_id",
-          "referenceIdFieldInDataIndex": "_file_id",
-          "fileFields": ["file_name", "file_size", "md5sum", "object_id"]
-        }
-      }
-    ],
+    "buttons": [],
     "loginForDownload": false,
     "guppyConfig": {
-      "dataType": "subject",
-      "nodeCountTitle": "Subject",
+      "dataType": "model",
+      "nodeCountTitle": "Models",
       "fieldMapping": [
-        {
-          "field": "_samples_count",
-          "name": "Samples Count"
-        },
-        {
-          "field": "_imaging_files_count",
-          "name": "Imaging Files Count"
-        },
-        {
-          "field": "_unaligned_reads_files_count",
-          "name": "Unaligned Reads Count"
-        },
-        {
-          "field": "_aligned_reads_files_count",
-          "name": "Aligned Reads Count"
-        },
-        {
-          "field": "_expression_arrays_count",
-          "name": "Expression Arrays Count"
-        }
+        { "field": "identifier", "name": "Model ID" },
+        { "field": "disease_name", "name": "Disease" },
+        { "field": "phenotype", "name": "Phenotype" },
+        { "field": "maintainer", "name": "Maintainer" },
+        { "field": "producer", "name": "Producer" }
       ],
       "manifestMapping": {
         "resourceIndexType": "file",
         "resourceIdField": "object_id",
-        "referenceIdFieldInResourceIndex": "subject_id",
-        "referenceIdFieldInDataIndex": "subject_id"
+        "referenceIdFieldInResourceIndex": "model_id",
+        "referenceIdFieldInDataIndex": "model_id"
       },
-      "accessibleFieldCheckList": ["project"],
-      "accessibleValidationField": "project"
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
+    }
+  },
+  {
+    "tabTitle": "Sample",
+    "charts": {
+      "biological_sex": {
+        "chartType": "fullPie",
+        "title": "Biological Sex"
+      },
+      "tissue_organ": {
+        "chartType": "bar",
+        "title": "Tissue / Organ"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Sample",
+          "fields": ["project_id", "genotype", "biological_sex", "tissue_organ"]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "pageLimit": {
+        "limit": 10000
+      },
+      "fields": [
+        "project_id",
+        "submitter_id",
+        "genotype",
+        "biological_sex",
+        "tissue_organ"
+      ],
+      "columns": {
+        "submitter_id": {
+          "sortable": false
+        }
+      }
+    },
+    "dropdowns": {},
+    "buttons": [],
+    "loginForDownload": false,
+    "guppyConfig": {
+      "dataType": "sample",
+      "nodeCountTitle": "Samples",
+      "fieldMapping": [
+        { "field": "genotype", "name": "Genotype" },
+        { "field": "biological_sex", "name": "Biological Sex" },
+        { "field": "tissue_organ", "name": "Tissue / Organ" }
+      ],
+      "manifestMapping": {
+        "resourceIndexType": "file",
+        "resourceIdField": "object_id",
+        "referenceIdFieldInResourceIndex": "sample_id",
+        "referenceIdFieldInDataIndex": "sample_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id"
     }
   },
   {
