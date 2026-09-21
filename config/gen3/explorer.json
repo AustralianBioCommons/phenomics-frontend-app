@@ -193,7 +193,7 @@
       "dataType": "file",
       "fieldMapping": [
         {
-          "field": "file_id",
+          "field": "_file_id",
           "name": "GUID"
         }
       ],
