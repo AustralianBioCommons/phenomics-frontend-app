@@ -199,14 +199,14 @@
       ],
       "nodeCountTitle": "Files",
       "manifestMapping": {
-        "resourceIndexType": "subject",
-        "resourceIdField": "subject_id",
-        "referenceIdFieldInResourceIndex": "object_id",
-        "referenceIdFieldInDataIndex": "object_id"
+        "resourceIndexType": "model",
+        "resourceIdField": "_model_id",
+        "referenceIdFieldInResourceIndex": "_model_id",
+        "referenceIdFieldInDataIndex": "_model_id"
       },
-      "accessibleFieldCheckList": ["subject_id"],
-      "accessibleValidationField": "subject_id",
-      "downloadAccessor": "subject_id"
+      "accessibleFieldCheckList": ["_model_id"],
+      "accessibleValidationField": "_model_id",
+      "downloadAccessor": "object_id"
     },
     "buttons": [
       {
