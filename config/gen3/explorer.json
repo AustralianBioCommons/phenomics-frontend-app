@@ -187,6 +187,12 @@
     },
     "table": {
       "enabled": true,
+      "detailsConfig": {
+	"panel": "fileDetails",
+	"mode": "click",
+	"idField": "_file_id",
+	"title": "File Details"
+      },
       "fields": ["project_id", "file_name", "file_size", "_file_id", "object_id"]
     },
     "guppyConfig": {
@@ -201,12 +207,12 @@
       "manifestMapping": {
         "resourceIndexType": "project",
         "resourceIdField": "project_id",
-        "referenceIdFieldInResourceIndex": "project_id",
-        "referenceIdFieldInDataIndex": "project_id"
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
       },
       "accessibleFieldCheckList": ["project_id"],
       "accessibleValidationField": "project_id",
-      "downloadAccessor": ["object_id"]
+      "downloadAccessor": "project_id"
     },
     "buttons": [
       {
@@ -216,7 +222,8 @@
         "leftIcon": "datafile",
         "rightIcon": "download",
         "actionArgs": {
-          "filename": "data_table_manifest.csv"
+          "filename": "data_table_manifest.csv",
+          "fileFields": ["object_id", "file_name", "file_size"]
         }
       }
     ],
