@@ -18,17 +18,20 @@
           "fields": ["project_id"]
         },
         {
+          "title": "Gene",
+          "fields": ["gene_symbol", "gene_id"]
+        },
+        {
+          "title": "Disease",
+          "fields": ["disease_name", "disease_id", "phenotype"]
+        },
+        {
+          "title": "Producer / Maintainer",
+          "fields": ["producer", "maintainer"]
+        },
+        {
           "title": "Model",
-          "fields": [
-            "identifier",
-            "name",
-            "disease_name",
-            "phenotype",
-            "maintainer",
-            "producer",
-            "gene_symbol",
-            "taxonomy"
-          ]
+          "fields": ["identifier", "name", "taxonomy"]
         }
       ]
     },
