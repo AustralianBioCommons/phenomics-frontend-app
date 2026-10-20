@@ -23,7 +23,7 @@
         },
         {
           "title": "Disease",
-          "fields": ["disease_name", "disease_id", "phenotype"]
+          "fields": ["disease_name", "disease_id", "phenotype_name", "phenotype_id"]
         },
         {
           "title": "Producer / Maintainer",
@@ -46,7 +46,7 @@
         "identifier",
         "name",
         "disease_name",
-        "phenotype",
+        "phenotype_name",
         "maintainer",
         "producer"
       ],
@@ -95,7 +95,8 @@
       "fieldMapping": [
         { "field": "identifier", "name": "Model ID" },
         { "field": "disease_name", "name": "Disease" },
-        { "field": "phenotype", "name": "Phenotype" },
+        { "field": "phenotype_name", "name": "Phenotype" },
+        { "field": "phenotype_id", "name": "Phenotype ID" },
         { "field": "maintainer", "name": "Maintainer" },
         { "field": "producer", "name": "Producer" }
       ],
