@@ -23,7 +23,11 @@
         },
         {
           "title": "Disease",
-          "fields": ["disease_name", "disease_id", "phenotype_name", "phenotype_id"]
+          "fields": ["disease_name", "disease_id"]
+        },
+        {
+          "title": "Phenotype",
+          "fields": ["phenotype_name", "phenotype_id"]
         },
         {
           "title": "Producer / Maintainer",
@@ -45,6 +49,8 @@
         "submitter_id",
         "identifier",
         "name",
+        "gene_symbol",
+        "gene_id",
         "disease_name",
         "phenotype_name",
         "maintainer",
