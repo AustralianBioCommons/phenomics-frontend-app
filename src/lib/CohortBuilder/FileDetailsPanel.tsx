@@ -21,6 +21,7 @@ import {
   MdContentCopy as IconCopy,
   MdCheck as IconCheck,
 } from 'react-icons/md';
+import { ExperimentDetailPanel } from './ExperimentDetailPanel';
 
 // a definition of the query response
 interface QueryResponse {
@@ -166,6 +167,9 @@ export const FileDetailsPanel = ({
 export const registerCustomExplorerDetailsPanels = () => {
   ExplorerTableDetailsPanelFactory().registerRendererCatalog({
     // NOTE: The catalog name must be tableDetails
-    tableDetails: { fileDetails: FileDetailsPanel }, // TODO: add simpler registration function that ensures the catalog name is tableDetails
+    tableDetails: {
+      fileDetails: FileDetailsPanel,
+      experimentDetail: ExperimentDetailPanel, // A1.6 drill-down to the detail index
+    }, // TODO: add simpler registration function that ensures the catalog name is tableDetails
   });
 };
