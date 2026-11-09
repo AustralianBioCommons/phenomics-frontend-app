@@ -206,13 +206,6 @@
     },
     "table": {
       "enabled": true,
-      "detailsConfig": {
-        "panel": "experimentDetail",
-        "mode": "click",
-        "idField": "submitter_id",
-        "title": "Assay & sample detail",
-        "panelContainer": "drawer"
-      },
       "pageLimit": {
         "limit": 10000
       },
@@ -228,7 +221,10 @@
       ],
       "columns": {
         "submitter_id": {
-          "sortable": false
+          "sortable": false,
+          "type": "string",
+          "cellRenderFunction": "experimentDetail",
+          "title": "Experiment ID"
         }
       }
     },

@@ -5,6 +5,7 @@ import {
 } from '@gen3/frontend';
 import { ActionIcon, Text, Tooltip } from '@mantine/core';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { ExperimentDetailCell } from './ExperimentDetailPanel';
 
 const RenderDicomLink = ({ cell }: CellRendererFunctionProps) => {
   if (!cell?.getValue() || cell?.getValue() === '') {
@@ -123,5 +124,10 @@ export const registerCohortTableCustomCellRenderers = () => {
     'link',
     'linkWithIconAndTooltip',
     RenderLinkWithIcon,
+  );
+  ExplorerTableCellRendererFactory().registerRenderer(
+    'string',
+    'experimentDetail',
+    ExperimentDetailCell, // A1.6 drill-down (detailsConfig.panel is ignored in 0.12.44)
   );
 };
