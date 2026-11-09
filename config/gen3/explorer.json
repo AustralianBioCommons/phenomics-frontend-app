@@ -196,10 +196,10 @@
         {
           "title": "Model",
           "fields": [
-            "models.name",
-            "models.gene_symbol",
-            "models.disease_name",
-            "models.taxonomy"
+            "model_name",
+            "model_gene_symbol",
+            "model_disease_name",
+            "model_taxonomy"
           ]
         }
       ]
@@ -215,15 +215,13 @@
         "description",
         "assay_platform",
         "experimental_design_variables",
-        "models.name",
-        "models.gene_symbol",
-        "models.disease_name"
+        "model_name",
+        "model_gene_symbol",
+        "model_disease_name"
       ],
       "columns": {
         "submitter_id": {
           "sortable": false,
-          "type": "string",
-          "cellRenderFunction": "experimentDetail",
           "title": "Experiment ID"
         }
       }
@@ -248,19 +246,19 @@
           "name": "Design Variables"
         },
         {
-          "field": "models.name",
+          "field": "model_name",
           "name": "Model"
         },
         {
-          "field": "models.gene_symbol",
+          "field": "model_gene_symbol",
           "name": "Gene"
         },
         {
-          "field": "models.disease_name",
+          "field": "model_disease_name",
           "name": "Disease"
         },
         {
-          "field": "models.taxonomy",
+          "field": "model_taxonomy",
           "name": "Taxonomy"
         }
       ],
