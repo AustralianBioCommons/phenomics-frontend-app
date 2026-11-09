@@ -176,6 +176,98 @@
     }
   },
   {
+    "tabTitle": "Experiment",
+    "charts": {
+      "assay_platform": {
+        "chartType": "bar",
+        "title": "Assay Platform"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Experiment",
+          "fields": [
+            "project_id",
+            "assay_platform",
+            "experimental_design_variables"
+          ]
+        },
+        {
+          "title": "Model",
+          "fields": [
+            "models.name",
+            "models.gene_symbol",
+            "models.disease_name",
+            "models.taxonomy"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "pageLimit": {
+        "limit": 10000
+      },
+      "fields": [
+        "project_id",
+        "submitter_id",
+        "description",
+        "assay_platform",
+        "experimental_design_variables",
+        "models.name",
+        "models.gene_symbol",
+        "models.disease_name"
+      ],
+      "columns": {
+        "submitter_id": {
+          "sortable": false
+        }
+      }
+    },
+    "dropdowns": {},
+    "buttons": [],
+    "loginForDownload": false,
+    "guppyConfig": {
+      "dataType": "experiment",
+      "nodeCountTitle": "Experiments",
+      "fieldMapping": [
+        {
+          "field": "submitter_id",
+          "name": "Experiment ID"
+        },
+        {
+          "field": "assay_platform",
+          "name": "Assay Platform"
+        },
+        {
+          "field": "experimental_design_variables",
+          "name": "Design Variables"
+        },
+        {
+          "field": "models.name",
+          "name": "Model"
+        },
+        {
+          "field": "models.gene_symbol",
+          "name": "Gene"
+        },
+        {
+          "field": "models.disease_name",
+          "name": "Disease"
+        },
+        {
+          "field": "models.taxonomy",
+          "name": "Taxonomy"
+        }
+      ],
+      "accessibleFieldCheckList": [
+        "project_id"
+      ],
+      "accessibleValidationField": "project_id"
+    }
+  },
+  {
     "tabTitle": "Data Files",
     "charts": {
       "file_type": {
