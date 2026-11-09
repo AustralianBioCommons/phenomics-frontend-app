@@ -269,6 +269,117 @@
     }
   },
   {
+    "tabTitle": "Assays",
+    "charts": {
+      "platform": {
+        "chartType": "bar",
+        "title": "Assay Platform"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "Experiment",
+          "fields": [
+            "experiment_submitter_id"
+          ]
+        },
+        {
+          "title": "Assay",
+          "fields": [
+            "platform",
+            "reference_genome",
+            "gene_identifier_system"
+          ]
+        },
+        {
+          "title": "Sample",
+          "fields": [
+            "genotype",
+            "biological_sex",
+            "tissue_organ"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "pageLimit": {
+        "limit": 10000
+      },
+      "fields": [
+        "experiment_submitter_id",
+        "submitter_id",
+        "platform",
+        "reference_genome",
+        "assay_date",
+        "sample_submitter_id",
+        "genotype",
+        "biological_sex",
+        "tissue_organ"
+      ],
+      "columns": {
+        "experiment_submitter_id": {
+          "title": "Experiment ID",
+          "sortable": false
+        },
+        "submitter_id": {
+          "title": "Assay ID",
+          "sortable": false
+        },
+        "sample_submitter_id": {
+          "title": "Sample ID",
+          "sortable": false
+        }
+      }
+    },
+    "dropdowns": {},
+    "buttons": [],
+    "loginForDownload": false,
+    "guppyConfig": {
+      "dataType": "detail",
+      "nodeCountTitle": "Assays",
+      "fieldMapping": [
+        {
+          "field": "experiment_submitter_id",
+          "name": "Experiment ID"
+        },
+        {
+          "field": "platform",
+          "name": "Platform"
+        },
+        {
+          "field": "reference_genome",
+          "name": "Reference Genome"
+        },
+        {
+          "field": "gene_identifier_system",
+          "name": "Gene ID System"
+        },
+        {
+          "field": "sample_submitter_id",
+          "name": "Sample ID"
+        },
+        {
+          "field": "genotype",
+          "name": "Genotype"
+        },
+        {
+          "field": "biological_sex",
+          "name": "Biological Sex"
+        },
+        {
+          "field": "tissue_organ",
+          "name": "Tissue / Organ"
+        }
+      ],
+      "accessibleFieldCheckList": [
+        "project_id"
+      ],
+      "accessibleValidationField": "project_id"
+    }
+  },
+  {
     "tabTitle": "Data Files",
     "charts": {
       "file_type": {
