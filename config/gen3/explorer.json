@@ -206,6 +206,13 @@
     },
     "table": {
       "enabled": true,
+      "detailsConfig": {
+        "panel": "experimentDetail",
+        "mode": "click",
+        "idField": "submitter_id",
+        "title": "Assay & sample detail",
+        "panelContainer": "drawer"
+      },
       "pageLimit": {
         "limit": 10000
       },
