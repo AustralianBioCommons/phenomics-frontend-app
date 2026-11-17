@@ -446,13 +446,19 @@
     },
     "table": {
       "enabled": true,
-      "detailsConfig": {
-	"panel": "fileDetails",
-	"mode": "click",
-	"idField": "_file_id",
-	"title": "File Details"
+      "pageLimit": {
+        "limit": 10000
       },
-      "fields": ["project_id", "file_name", "file_size", "_file_id", "object_id"]
+      "fields": ["project_id", "file_name", "file_size", "_file_id", "object_id"],
+      "columns": {
+        "object_id": {
+          "title": "Download",
+          "type": "link",
+          "cellRenderFunction": "default",
+          "params": { "baseURL": "/user/data/download/" },
+          "sortable": false
+        }
+      }
     },
     "guppyConfig": {
       "dataType": "file",
