@@ -304,6 +304,46 @@
     },
     "table": {
       "enabled": true,
+      "detailsConfig": {
+        "panel": "default",
+        "mode": "click",
+        "idField": "submitter_id",
+        "title": "Assay details",
+        "simpleDetailsView": {
+          "header": { "field": "$.submitter_id" },
+          "fieldsToShow": [
+            {
+              "groupName": "Assay",
+              "groupWidth": "half",
+              "fields": [
+                { "name": "submitter_id", "field": "$.submitter_id", "label": "Assay ID" },
+                { "name": "experiment_submitter_id", "field": "$.experiment_submitter_id", "label": "Experiment ID" },
+                { "name": "platform", "field": "$.platform", "label": "Platform" },
+                { "name": "reference_genome", "field": "$.reference_genome", "label": "Reference genome", "valueIfNotAvailable": "Not provided" },
+                { "name": "assay_date", "field": "$.assay_date", "label": "Assay date", "valueIfNotAvailable": "Not provided" }
+              ]
+            },
+            {
+              "groupName": "Sample",
+              "groupWidth": "half",
+              "fields": [
+                { "name": "sample_submitter_id", "field": "$.sample_submitter_id", "label": "Sample ID" },
+                { "name": "genotype", "field": "$.genotype", "label": "Genotype" },
+                { "name": "biological_sex", "field": "$.biological_sex", "label": "Sex" },
+                { "name": "tissue_organ", "field": "$.tissue_organ", "label": "Tissue" }
+              ]
+            },
+            {
+              "groupName": "Files",
+              "fields": [
+                { "name": "file_1", "field": "$.expression_files[0].file_name", "label": "File", "includeIfNotAvailable": false },
+                { "name": "file_2", "field": "$.expression_files[1].file_name", "label": "File", "includeIfNotAvailable": false },
+                { "name": "file_3", "field": "$.expression_files[2].file_name", "label": "File", "includeIfNotAvailable": false }
+              ]
+            }
+          ]
+        }
+      },
       "pageLimit": {
         "limit": 10000
       },
@@ -316,7 +356,8 @@
         "sample_submitter_id",
         "genotype",
         "biological_sex",
-        "tissue_organ"
+        "tissue_organ",
+        "expression_files.file_name"
       ],
       "columns": {
         "experiment_submitter_id": {
@@ -329,6 +370,10 @@
         },
         "sample_submitter_id": {
           "title": "Sample ID",
+          "sortable": false
+        },
+        "expression_files.file_name": {
+          "title": "Files",
           "sortable": false
         }
       }
