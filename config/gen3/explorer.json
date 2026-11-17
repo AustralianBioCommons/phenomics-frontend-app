@@ -305,6 +305,7 @@
     "table": {
       "enabled": true,
       "detailsConfig": {
+        "panel": "default",
         "mode": "click",
         "idField": "submitter_id",
         "title": "Assay details",
