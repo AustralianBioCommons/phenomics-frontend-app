@@ -317,7 +317,7 @@
               "groupWidth": "half",
               "fields": [
                 { "name": "submitter_id", "field": "$.submitter_id", "label": "Assay ID" },
-                { "name": "experiment_submitter_id", "field": "$.experiment_submitter_id", "label": "Experiment ID" },
+                { "name": "experiment_submitter_id", "field": "$.experiment_submitter_id", "label": "Experiment ID", "contentType": "textList" },
                 { "name": "platform", "field": "$.platform", "label": "Platform" },
                 { "name": "reference_genome", "field": "$.reference_genome", "label": "Reference genome", "valueIfNotAvailable": "Not provided" },
                 { "name": "assay_date", "field": "$.assay_date", "label": "Assay date", "valueIfNotAvailable": "Not provided" }
@@ -327,10 +327,10 @@
               "groupName": "Sample",
               "groupWidth": "half",
               "fields": [
-                { "name": "sample_submitter_id", "field": "$.sample_submitter_id", "label": "Sample ID" },
-                { "name": "genotype", "field": "$.genotype", "label": "Genotype" },
-                { "name": "biological_sex", "field": "$.biological_sex", "label": "Sex" },
-                { "name": "tissue_organ", "field": "$.tissue_organ", "label": "Tissue" }
+                { "name": "sample_submitter_id", "field": "$.sample_submitter_id", "label": "Sample ID", "contentType": "textList" },
+                { "name": "genotype", "field": "$.genotype", "label": "Genotype", "contentType": "textList" },
+                { "name": "biological_sex", "field": "$.biological_sex", "label": "Sex", "contentType": "textList" },
+                { "name": "tissue_organ", "field": "$.tissue_organ", "label": "Tissue", "contentType": "textList" }
               ]
             },
             {
