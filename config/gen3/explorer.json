@@ -332,16 +332,10 @@
                 { "name": "biological_sex", "field": "$.biological_sex", "label": "Sex", "contentType": "textList" },
                 { "name": "tissue_organ", "field": "$.tissue_organ", "label": "Tissue", "contentType": "textList" }
               ]
-            },
-            {
-              "groupName": "Files",
-              "fields": [
-                { "name": "file_1", "field": "$.expression_files[0].file_name", "label": "File", "includeIfNotAvailable": false },
-                { "name": "file_2", "field": "$.expression_files[1].file_name", "label": "File", "includeIfNotAvailable": false },
-                { "name": "file_3", "field": "$.expression_files[2].file_name", "label": "File", "includeIfNotAvailable": false }
-              ]
             }
-          ]
+          ],
+          "downloadLinks": { "field": "expression_files", "name": "Files" },
+          "downloadLinkFields": { "idField": "object_id", "titleField": "file_name", "descriptionField": "data_type" }
         }
       },
       "pageLimit": {
@@ -357,7 +351,8 @@
         "genotype",
         "biological_sex",
         "tissue_organ",
-        "expression_files.file_name"
+        "expression_files.file_name",
+        "expression_files.object_id"
       ],
       "columns": {
         "experiment_submitter_id": {
@@ -375,6 +370,10 @@
         "expression_files.file_name": {
           "title": "Files",
           "sortable": false
+        },
+        "expression_files.object_id": {
+          "visible": false,
+          "lockVisible": true
         }
       }
     },
