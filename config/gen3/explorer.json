@@ -334,7 +334,7 @@
               ]
             }
           ],
-          "downloadLinks": { "field": "expression_files", "name": "Files" },
+          "downloadLinks": { "field": "subRows", "name": "Files" },
           "downloadLinkFields": { "idField": "object_id", "titleField": "file_name", "descriptionField": "data_type" }
         }
       },
